@@ -1,0 +1,18 @@
+<section id="calculators">
+    <h2>ROI Calculator</h2>
+    <form id="roi-form">
+        <label>Initial Investment: <input type="number" id="investment" required></label>
+        <label>Returns: <input type="number" id="returns" required></label>
+        <button type="submit">Calculate</button>
+    </form>
+    <p id="roi-result"></p>
+    <script>
+        document.getElementById('roi-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const investment = parseFloat(document.getElementById('investment').value);
+            const returns = parseFloat(document.getElementById('returns').value);
+            const roi = ((returns - investment) / investment) * 100;
+            document.getElementById('roi-result').innerText = `ROI: ${roi.toFixed(2)}%`;
+        });
+    </script>
+</section>
