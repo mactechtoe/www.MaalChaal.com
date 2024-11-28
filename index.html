@@ -16,3 +16,84 @@
         });
     </script>
 </section>
+<section id="calculators">
+    <h2>ROI Calculator</h2>
+    <form id="roi-form">
+        <label>Initial Investment (in PKR): 
+            <input type="number" id="investment" required>
+        </label><br>
+        <label>Return Percentage (%): 
+            <input type="number" id="return-percentage" required>
+        </label><br>
+        <button type="submit">Calculate</button>
+    </form>
+    <p id="roi-result"></p>
+    <script>
+        document.getElementById('roi-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+            
+            // Get the values from inputs
+            const investment = parseFloat(document.getElementById('investment').value);
+            const returnPercentage = parseFloat(document.getElementById('return-percentage').value);
+
+            // Calculate ROI
+            const profit = (investment * returnPercentage) / 100; // Profit amount
+            const totalReturns = investment + profit; // Total returns
+            
+            // Display the results
+            document.getElementById('roi-result').innerText = 
+                `Profit: PKR ${profit.toFixed(2)} | Total Returns: PKR ${totalReturns.toFixed(2)} | ROI: ${returnPercentage.toFixed(2)}%`;
+        });
+    </script>
+</section>
+Profit: PKR 34,000 | Total Returns: PKR 134,000 | ROI: 34.00%
+<body>
+    <header>
+        <nav>
+            <h1>MaalChaal</h1>
+            <div>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#stocks">Live Stocks</a>
+                <a href="#calculators">Calculators</a>
+                <a href="#news">News</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <h2>Welcome to MaalChaal</h2>
+        <p>Your one-stop solution for tracking the Pakistan Stock Market and mutual funds.</p>
+    </section>
+
+    <!-- ROI Calculator Section -->
+    <section id="calculators">
+        <h2>ROI Calculator</h2>
+        <form id="roi-form">
+            <label>Initial Investment (in PKR): 
+                <input type="number" id="investment" required>
+            </label><br>
+            <label>Return Percentage (%): 
+                <input type="number" id="return-percentage" required>
+            </label><br>
+            <button type="submit">Calculate</button>
+        </form>
+        <p id="roi-result"></p>
+        <script>
+            document.getElementById('roi-form').addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent form submission
+                
+                // Get the values from inputs
+                const investment = parseFloat(document.getElementById('investment').value);
+                const returnPercentage = parseFloat(document.getElementById('return-percentage').value);
+
+                // Calculate ROI
+                const profit = (investment * returnPercentage) / 100; // Profit amount
+                const totalReturns = investment + profit; // Total returns
+                
+                // Display the results
+                document.getElementById('roi-result').innerText = 
+                    `Profit: PKR ${profit.toFixed(2)} | Total Returns: PKR ${totalReturns.toFixed(2)} | ROI: ${returnPercentage.toFixed(2)}%`;
+            });
+        </script>
+    </section>
+</body>
